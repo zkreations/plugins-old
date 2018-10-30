@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
 <div id="disqus_thread"></div>
 <script>
 window.addEventListener('message', receiveMessage, false);
@@ -32,13 +38,22 @@ function getQueryVariable(variable) {
 	}
 	return(false);
 }
+var css = "#disqus_thread {font-family:" + getQueryVariable("family") + "} a {color:#" + getQueryVariable("color") + "}",
+    head = document.head || document.getElementsByTagName("head")[0],
+    style = document.createElement("style");
+    style.type = "text/css";
+    style.styleSheet ? style.styleSheet.cssText = css : style.appendChild(document.createTextNode(css));
+    head.appendChild(style);
+    
 var disqus_config = function () { 
 	this.page.url = getQueryVariable("url");
 };
 (function() {
 	var d = document, s = d.createElement('script');
-	s.src = '//' + getQueryVariable("shortname") + '.disqus.com/embed.js';
+	s.src = 'https://' + getQueryVariable("shortname") + '.disqus.com/embed.js';
 	s.setAttribute('data-timestamp', +new Date());
 	(d.head || d.body).appendChild(s);
 })();
 </script>
+</body>
+</html>
