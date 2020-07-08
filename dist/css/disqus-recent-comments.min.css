@@ -1,0 +1,75 @@
+/*!
+ * Disqus Recent Comments v1.0.0
+ * Copyright 2020 zkreations
+ * Daniel Abel M. (fb.com/danieI.abel)
+ * Licensed under MIT (github.com/zkreations/plugins/blob/master/LICENSE)
+ */
+/*! Core (No modificar) {{*/
+.dsq-widget .dsq-widget-user {display: block}
+.dsq-widget .dsq-widget-item {font-size: 14px}
+.dsq-widget .wjs-cmts__data {line-height: 1.4}
+.dsq-widget .dsq-widget-avatar {
+   transform: translateY(0);
+   transition: transform .3s;
+}
+.dsq-widget .dsq-widget-item:hover .dsq-widget-avatar {
+   transform: translateY(-.25em)
+}
+.dsq-widget .dsq-widget-meta {
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap
+}
+.dsq-widget .dsq-widget-meta a:first-child {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   max-width: 40%;
+   white-space: nowrap
+}
+.dsq-widget .dsq-widget-avatar {
+   margin-right: 1em;
+   padding: 0
+}
+.dsq-widget-comment {
+   display: block;
+   margin-left: calc(45px + 1em)
+}
+/*}} Fin del core {{*/
+
+/*! Personalización */
+/* Cuerpo
+-----------------------------------------*/
+.dsq-widget .dsq-widget-item {
+    padding: 1.5em; /* relleno */
+    margin: 0 0 .5em 0; /* separación */
+    border-radius: 5px; /* borde redondeado */
+    box-shadow: 0 2px 6px rgba(0,21,64,.14), 0 2px 20px rgba(0,21,64,.05); /* sombra */
+}
+/* Avatar
+-----------------------------------------*/
+.dsq-widget .dsq-widget-avatar {
+    width: 45px; /* ancho */
+    height: 45px; /* alto */
+    border-radius: 50%; /* borde redondeado */
+    box-shadow: 0 2px 3px rgba(0,21,64,.2), 0 2px 5px rgba(0,21,64,.05); /* sombra */
+}
+/* Contenido
+-----------------------------------------*/
+.dsq-widget .dsq-widget-user {
+    font-size: 1em; /* tamaño de fuente */
+    margin-bottom: .25em; /* separación */
+    color: #263238; /* color del nombre de usuario */
+    font-weight: 500; /* densidad del texto */
+}
+.dsq-widget .dsq-widget-meta a {
+    color: #B0BEC5; /* color de los  datos */
+}
+.dsq-widget-comment {
+    color: #37474F; /* color del texto */
+}
+.dsq-widget .dsq-widget-meta {
+    margin-top: 1.4em; /* separación */
+    padding-top: 1.4em; /* relleno */
+    border-top: 1px dashed rgba(0, 0, 0, 0.1); /* borde */
+    font-size: .9em; /* tamaño de fuente */
+}

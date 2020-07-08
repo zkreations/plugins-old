@@ -1,0 +1,117 @@
+/*!
+ * Tlist v2.0
+ * Copyright 2020 zkreations
+ * Daniel Abel M. (fb.com/danieI.abel)
+ * Licensed under MIT (github.com/zkreations/plugins/blob/master/LICENSE)
+ */
+ /*! Core (No modificar) {{*/
+.tlist {
+   position: relative;
+   width: 100%;
+   z-index: 5;
+}
+.tlist-content {
+    overflow-y: auto;
+}
+.tlist-content::-webkit-scrollbar {width: 4px;}
+.tlist-content::-webkit-scrollbar-track {background-color: transparent;}
+.tlist-content::-webkit-scrollbar-thumb {
+  background-color: #CFD8DC;
+  border-radius: 10px;
+}
+.tlist-btn {cursor: pointer;}
+.tlist > input {display: none;}
+.tlist > input:checked ~ .tlist-dropdown {
+   display: block;
+}
+@keyframes tlist-dropdown {
+   from {transform: translateY(-1rem);opacity: 0}
+   to {transform: translateY(0);opacity: 1}
+}
+.tlist-dropdown {
+   position: absolute;
+   width: 100%;
+   left: 0;
+   top: calc(100% + 4px);
+   display: none;
+   background: var(--tlist-bg);
+   animation: tlist-dropdown .3s ease-in-out;
+   filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1))
+           drop-shadow(0 3px 5px rgba(0, 0, 0, 0.15));
+}
+.tlist-dropdown::before {
+   content: "";
+   border-right: 12px solid transparent;
+   border-left: 12px solid transparent;
+   border-bottom: 12px solid var(--tlist-bg);
+   position: absolute;
+   top: -10px;
+   left: calc(50% - 5px);
+}
+.tlist-btn,
+.tlist-link {
+   display: flex;
+   align-items: center;
+}
+.tlist-num {margin-left: auto;}
+.tlist-link:not(:last-child) {margin-bottom: 4px;}
+.tlist-link > i {
+   text-align: center;
+   width: 1.25em;
+}
+/*}} Fin del core {{*/
+
+/*! Personalización */
+/* Estructura
+-----------------------------------------*/
+.tlist {
+   --tlist-bg: #fff; /* color de fondo  */
+}
+.tlist-content {
+    max-height: 390px; /* alto maximo */
+}
+.tlist-dropdown {
+   padding: 10px; /* relleno */
+   border-radius: 5px; /* borde redondo */
+}
+/* Lista
+-----------------------------------------*/
+.tlist-link {
+   padding: 12px 14px; /* relleno */
+   color: #5a6370; /* color */
+   font-size: 14px; /* tamaño de texto */
+   font-weight: 500; /* densidad del texto */
+}
+.tlist-link:hover,
+.tlist-link.is-here {
+   background: #f4f5f7; /* color de fondo  */
+   border-radius: 5px; /* borde redondo */
+   color: #1c2333; /* color (hover) */
+}
+/* Icono
+-----------------------------------------*/
+.tlist-link > i {
+   font-size: 20px; /* tamaño de texto */
+   margin-right: 12px; /* separacion derecha */
+   color: #9fa6b2; /* color */
+}
+/* Numero
+-----------------------------------------*/
+.tlist-num {
+   background: rgba(38, 50, 56, 0.05); /* color de fondo  */
+   padding: 2px 12px; /* relleno */
+   font-size: 12px; /* tamaño de texto */
+   border-radius: 10px; /* borde redondo */
+}
+/* Boton
+-----------------------------------------*/
+.tlist-btn {
+   padding: 14px 18px; /* relleno */
+   background: #f4f5f7; /* color de fondo  */
+   font-weight: 500; /* densidad del texto */
+   color: #5a6370; /* color */
+   border-radius: 5px; /* borde redondo */
+}
+.tlist-btn:hover {
+   color: #1c2333; /* color (hover) */
+}

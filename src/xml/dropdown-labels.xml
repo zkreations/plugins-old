@@ -1,0 +1,53 @@
+<b:widget id='Label50' title='Etiquetas desplegables' type='Label'>
+   <b:includable id='main'>
+      <b:include expr:name='data:widgets ? "widget-title" : "title"'/>
+      <b:include name='content'/>
+   </b:includable>
+   <b:includable id='title'>
+      <b:tag name="h2" class='widget-title'>
+         <span class='widget-name'><data:title/></span>
+      </b:tag>
+   </b:includable>
+   <b:includable id='content'>
+      <div class='widget-content'>
+         <b:with value='data:widget.instanceId' var='id'>
+         <div class='tlist'>
+            <b:include name='btn'/>
+            <div class='tlist-dropdown'>
+               <b:include name='list'/>
+            </div>
+         </div>
+         <b:include cond='!data:widgets' name='layout2fix'/>
+         </b:with>
+      </div><!-- .widget-content -->
+   </b:includable>
+   <b:includable id='btn'>
+     <input expr:id='"tlist-" + data:id' type='checkbox'/>
+     <label class='tlist-btn' expr:for='"tlist-" + data:id'>Seleccionar</label>
+   </b:includable>
+   <b:includable id='list'>
+      <div class='tlist-content'>
+         <b:loop values='data:labels' var='i'>
+            <a class='tlist-link' expr:href='data:i.url'>
+            <b:class cond='data:view.url == data:i.url' name='is-here'/>
+            <b:include name='icons'/><data:i.name/>
+            <b:include cond='data:showFreqNumbers' name='numbers'/>
+            </a>
+         </b:loop>
+      </div>
+   </b:includable>
+   <b:includable id='numbers'>
+      <span class='tlist-num'><data:i.count/></span>
+   </b:includable>
+   <b:includable id='layout2fix'>
+      <style>#<data:id/>{z-index: 2}</style>
+   </b:includable>
+   <b:includable id='icons'>
+      <b:switch var='data:i.name'>
+         <b:case value='Astronomia'/>
+            <i class="fas fa-meteor"></i>
+         <b:default/>
+            <i class="fas fa-tag"></i>
+      </b:switch>
+   </b:includable>
+</b:widget>

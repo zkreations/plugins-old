@@ -1,0 +1,29 @@
+<b:widget id='TextList51' title='Imagen Aleatoria' type='TextList'>
+   <b:includable id='main'>
+      <b:include expr:name='data:widgets ? "widget-title" : "title"'/>
+      <b:include name='content'/>
+      <b:include name='js'/>
+   </b:includable>
+   <b:includable id='title'>
+      <b:tag name="h2" class='widget-title'>
+         <span class='widget-name'><data:title/></span>
+      </b:tag>
+   </b:includable>
+   <b:includable id='content'>
+      <div class='widget-content'>
+        <div expr:id='"randomImage-" + data:widget.instanceId'/>
+      </div><!-- .widget-content -->
+   </b:includable>
+   <b:includable id='js'>
+     <script>
+     var randomImage = function() {
+     var container = document.getElementById('randomImage-<data:widget.instanceId/>'),//<![CDATA[
+         images = [];//]]><b:loop index='i' values='data:items' var='e'>
+         <b:with expr:value='"{" + (data:e contains "src:" ? data:e : 0) + "}"' var='img'>
+         <b:with value='data:img.src ?: data:e' var='imgSrc'>
+           images[<data:i/>] = "<b:tag cond='data:img.url' name='a' expr:href='data:img.url'><img expr:src='data:imgSrc'/></b:tag>";
+         </b:with></b:with></b:loop>//<![CDATA[
+         container.innerHTML = images[Math.floor(Math.random() * images.length)];
+     }();//]]></script>
+   </b:includable>
+</b:widget>
