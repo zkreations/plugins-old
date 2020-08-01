@@ -1,4 +1,4 @@
-<b:widget id='LinkList61' title='Marquee' type='LinkList'>
+<b:widget id='LinkList62' title='Marquee X' type='LinkList'>
    <b:includable id='main'>
       <b:include expr:name='data:widgets ? "widget-title" : "title"'/>
       <b:include name='content'/>
@@ -10,7 +10,7 @@
    </b:includable>
    <b:includable id='content'>
       <div class='widget-content'>
-         <div class="marquee"><div class="marquee-content">
+         <div class="marquee-x"><div class="marquee-x-content">
             <b:loop values='data:links' var='marquee'>
                <b:include name='items'/>
             </b:loop>
@@ -18,9 +18,9 @@
       </div><!-- .widget-content -->
    </b:includable>
    <b:includable id='items'>
-      <a class="marquee-item" expr:href='data:marquee.target'>
+      <a class="marquee-x-item" expr:href='data:marquee.target'>
       <b:attr cond='data:marquee.target not contains "?in"' name='target' value='_blank'/>
-         <img class='marquee-image' alt='banner' expr:src='data:marquee.name'/>
+         <img class='marquee-x-image' alt='banner' expr:src='data:marquee.name'/>
       </a>
    </b:includable>
 </b:widget>

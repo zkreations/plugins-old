@@ -1,0 +1,6 @@
+/*!
+ * Marquee-X v2.0
+ * Copyright 2020 zkreations
+ * Daniel Abel M. (fb.com/danieI.abel)
+ * Licensed under MIT (github.com/zkreations/plugins/blob/master/LICENSE)
+ *//*! Core (No modificar) {{*/@-webkit-keyframes marquee-x{from{transform:translate3d(0,0,0)}to{transform:translate3d(-100%,0,0)}}@keyframes marquee-x{from{transform:translate3d(0,0,0)}to{transform:translate3d(-100%,0,0)}}@-webkit-keyframes marquee-x-inset{from,to{transform:translate3d(0,0,0);padding-left:0}50%{transform:translate3d(-100%,0,0);margin-left:100%}}@keyframes marquee-x-inset{from,to{transform:translate3d(0,0,0);padding-left:0}50%{transform:translate3d(-100%,0,0);margin-left:100%}}.marquee-x{overflow:hidden;position:relative}.marquee-x-content{-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;width:-webkit-max-content;width:-moz-max-content;width:max-content;display:flex;align-items:center}.marquee-x-content:hover{-webkit-animation-play-state:paused;animation-play-state:paused}.marquee-x-item{height:100%}.marquee-x-image{max-height:100%}.marquee-x-content{padding-left:100%}/*! Personalización */.marquee-x-content{max-height:260px}.marquee-x-content{-webkit-animation-duration:20s;animation-duration:20s;-webkit-animation-timing-function:linear;animation-timing-function:linear;-webkit-animation-name:marquee-x;animation-name:marquee-x}

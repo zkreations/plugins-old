@@ -1,15 +1,15 @@
 /*!
- * Marquee v2.0
+ * Marquee-Y v2.0
  * Copyright 2020 zkreations
  * Daniel Abel M. (fb.com/danieI.abel)
  * Licensed under MIT (github.com/zkreations/plugins/blob/master/LICENSE)
  */
  /*! Core (No modificar) {{*/
-@keyframes marquee {
+@keyframes marquee-y {
    from {transform: translate3d(0, 0, 0);}
    to {transform: translate3d(0, -100%, 0);}
 }
-@keyframes marquee-inset {
+@keyframes marquee-y-inset {
    from,to {
       transform: translate3d(0, calc(0px - var(--marquee-y)), 0);
    }
@@ -17,32 +17,32 @@
       transform: translate3d(0, calc(-100% + var(--marquee-y)), 0);
    }
 }
-.marquee {
+.marquee-y {
    --marquee-y: 300px;
    overflow: hidden;
    position: relative;
    height: var(--marquee-y);
 }
-.marquee-content {
+.marquee-y-content {
    animation-iteration-count: infinite;
    width: 100%;
 }
-.marquee-content:hover {animation-play-state: paused}
-.marquee-item {display: block;}
-.marquee-image {max-width: 100%}
-.marquee-content {padding-top: var(--marquee-y);}
+.marquee-y-content:hover {animation-play-state: paused}
+.marquee-y-item {display: block;}
+.marquee-y-image {max-width: 100%}
+.marquee-y-content {padding-top: var(--marquee-y);}
 /*}} Fin del core {{*/
 
 /*! Personalización */
 /* Contenedor
 -----------------------------------------*/
-.marquee {
+.marquee-y {
    --marquee-y: 300px; /* alto */
 }
 /* Animacion
 -----------------------------------------*/
-.marquee-content {
+.marquee-y-content {
    animation-duration: 10s; /* velocidad */
    animation-timing-function: linear; /* flujo */
-   animation-name: marquee; /* nombre (marquee | marquee-inset) */
+   animation-name: marquee-y; /* nombre (marquee-y | marquee-y-inset) */
 }
