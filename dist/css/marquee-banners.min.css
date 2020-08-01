@@ -1,0 +1,6 @@
+/*!
+ * Marquee v2.0
+ * Copyright 2020 zkreations
+ * Daniel Abel M. (fb.com/danieI.abel)
+ * Licensed under MIT (github.com/zkreations/plugins/blob/master/LICENSE)
+ *//*! Core (No modificar) {{*/@keyframes marquee{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,-100%,0)}}@keyframes marquee-inset{from,to{transform:translate3d(0,calc(0 - var(--marquee-y)),0)}50%{transform:translate3d(0,calc(-100% + var(--marquee-y)),0)}}.marquee{--marquee-y:300px;overflow:hidden;position:relative;height:var(--marquee-y)}.marquee-content{animation-iteration-count:infinite;width:100%}.marquee-content:hover{animation-play-state:paused}.marquee-item{display:block}.marquee-image{max-width:100%}.marquee-content{padding-top:var(--marquee-y)}/*! Personalización */.marquee{--marquee-y:300px}.marquee-content{animation-duration:10s;animation-timing-function:linear;animation-name:marquee}
