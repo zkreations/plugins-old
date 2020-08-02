@@ -1,0 +1,40 @@
+<b:includable id='postNewShare'>
+   <div class='nshare'>
+   <b:with value='data:post.shareUrl ?: data:post.sharePostUrl' var='share'>
+      <b:with value='data:view.url.canonical' var='url'>
+         <b:loop index='i' values='{"facebook","twitter","pinterest"}' var='target'>
+            <a class='nshare-item' expr:href='params(data:share,{target: data:target})' target='_blank'>
+               <b:class expr:name='"nshare-" + (data:i == 0 ? "fb" : (data:i == 1 ? "tt" : "pt"))'/>
+               <i expr:class='"fab fa-" + data:target'></i>
+            </a>
+         </b:loop>
+         <b:with value='"nshare-item nshare-"' var='class'>
+            <!-- tumblr -->
+            <a expr:href='params("https://tumblr.com/share",{canonicalUrl: data:url})' target='_blank'>
+               <b:class expr:name='data:class + "tb"'/><i class="fab fa-tumblr"></i>
+            </a>
+            <!-- reddit -->
+            <a expr:href='params("https://reddit.com/submit",{url: data:url, title: data:post.title})' target='_blank'>
+               <b:class expr:name='data:class + "rd"'/><i class="fab fa-reddit-alien"></i>
+            </a>
+            <!-- vk -->
+            <a expr:href='params("https://vk.com/share.php",{url: data:url})' target='_blank'>
+               <b:class expr:name='data:class + "vk"'/><i class="fab fa-vk"></i>
+            </a>
+            <!-- whatsapp -->
+            <a expr:href='params("https://api.whatsapp.com/send",{text: data:url})' target='_blank'>
+               <b:class expr:name='data:class + "ws"'/><i class="fab fa-whatsapp"></i>
+            </a>
+            <!-- telegram -->
+            <a expr:href='params("https://t.me/share/url",{url: data:url})' target='_blank'>
+               <b:class expr:name='data:class + "tlg"'/><i class="fab fa-telegram-plane"></i>
+            </a>
+            <!-- email -->
+            <a expr:href='params(data:share,{target: "email"})' target='_blank'>
+               <b:class expr:name='data:class + "msj"'/><i class="fas fa-envelope"></i>
+            </a>
+         </b:with><!--/ data:class -->
+      </b:with><!--/ data:url -->
+   </b:with><!--/ data:share -->
+   </div><!--/ .nshare -->
+</b:includable>
